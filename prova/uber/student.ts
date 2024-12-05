@@ -14,7 +14,7 @@ class Pessoa {
         this.dinheiro = dinheiro;
     }
 
-    toString() {
+    toString(): string {
         return `${this.nome}:${this.dinheiro}`
     }
 
@@ -25,6 +25,9 @@ class Pessoa {
         return this.dinheiro;
     }
 
+    setdinheiro(dinheiro: number) {
+        this.dinheiro = dinheiro;
+    }
 
 }
 
@@ -38,6 +41,11 @@ class Moto {
         this.motorista = null;
         this.passageiro = null;
     }
+
+    toString(): string {
+        return `Cost: ${this.custo}, Driver: ${this.motorista}, Passenger${this.passageiro}`;
+    }
+
     getcusto(): number {
         return this.custo;
     }
@@ -47,9 +55,11 @@ class Moto {
     getpassageiro(): Pessoa | null {
         return this.passageiro;
     }
+
+    setDriver(motorista: Pessoa) {
+        this.motorista = motorista;
+    }
 }
-
-
 
 
 class Adapter {
@@ -58,7 +68,8 @@ class Adapter {
         this.moto = new Moto();
     }
     setDriver(name: string, money: number): void {
-        this.moto.setDriver(name, money);
+        let motorista = new Pessoa(name, money);
+        this.moto.setDriver(motorista);
     }
 
     setPassenger(name: string, money: number): void {
