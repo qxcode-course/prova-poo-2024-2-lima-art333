@@ -1,3 +1,4 @@
+import { timingSafeEqual } from "crypto";
 import { stringify } from "querystring";
 
 function input(): string { let X: any = input; X.L = X.L || require("fs").readFileSync(0).toString().split(/\r?\n/); return X.L.shift(); } // _TEST_ONLY_
@@ -43,7 +44,15 @@ class Moto {
     }
 
     toString(): string {
-        return `Cost: ${this.custo}, Driver: ${this.motorista}, Passenger${this.passageiro}`;
+        let motorista = ""
+
+        if (this.motorista == null) {
+            motorista = "None"
+        } else {
+            motorista = this.motorista.toString()
+        }
+
+        return `Cost: ${this.custo}, Driver: ${motorista}, Passenger: ${this.passageiro}`;
     }
 
     getcusto(): number {
@@ -59,6 +68,28 @@ class Moto {
     setDriver(motorista: Pessoa) {
         this.motorista = motorista;
     }
+
+    setPassenger(pessoa: Pessoa ) {
+        this.passageiro = pessoa;
+    }
+    setDrive(distancia: number): void {
+        this.custo += distancia;
+    }
+    leavePassenger(): void {
+        if (this.passageiro != null && this.passageiro.getdinheiro() > this.custo) {
+            this.passageiro?.setdinheiro(this.passageiro?.getdinheiro() - this.custo)
+        } else {
+            console.log("fail: Passenger does not have enough money")
+            this.passageiro?.setdinheiro(0);
+        }
+
+        console.log(`${this.passageiro?.toString()} leave`);
+        this.passageiro = null;
+        this.motorista?.setdinheiro(this.motorista.getdinheiro() + this.custo)
+        this.custo = 0;
+        
+    }
+
 }
 
 
@@ -73,15 +104,20 @@ class Adapter {
     }
 
     setPassenger(name: string, money: number): void {
+        let passageiro = new Pessoa(name, money);
+        this.moto.setPassenger(passageiro);
     }
 
     drive(distance: number): void {
+        this.moto.setDrive(distance)
     }
 
     leavePassenger(): void {
+        this.moto.leavePassenger()
     }
 
     show(): void {
+        console.log(this.moto.toString())
     }
 }
 
