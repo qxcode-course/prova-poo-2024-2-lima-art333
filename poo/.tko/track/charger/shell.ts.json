@@ -1,0 +1,120 @@
+{
+    "patches": [
+        {
+            "label": "2024-12-13_16-47-05",
+            "content": "@@ -370,378 +370,8 @@\n %7B%7D;%0A\n-class Notebook %7B%0A    ligado: boolean;%0A    tempoUso: number;%0A    carregador: Carregador %7C null;%0A    constructor()%7B%0A        this.ligado = false;%0A    %7D%0A    %0A    toString(): string%7B%0A        if(this.ligado)%7B%0A            return %60ligado%60;%0A        %7D%0A        else%7B%0A            return %60desligado%60;%0A        %7D%0A    %7D%0A%0A    ligar() %7B%0A%0A    %7D%0A%7D%0Aclass Carregador%7B%0A    potencia: number%0A%7D%0A%0A\n %0Acla\n@@ -386,16 +386,19 @@\n er %7B%0A   \n+ //\n  private\n@@ -457,24 +457,27 @@\n id %7B%0A       \n+ //\n  console.log\n"
+        },
+        {
+            "label": "2024-12-13_17-34-37",
+            "content": "@@ -646,18 +646,8 @@\n rn %60\n-Notebook: \n desl\n"
+        },
+        {
+            "label": "2024-12-13_17-35-16",
+            "content": "@@ -699,88 +699,8 @@\n ) %7B%0A\n-        if(this.carregador == null)%7B%0A            console.log(n%C3%A3o tem);%0A        %7D\n %0A   \n"
+        },
+        {
+            "label": "2024-12-13_17-37-03",
+            "content": "@@ -760,28 +760,15 @@\n log(\n-%22\n n%C3%A3o tem\n- carregador%22\n );%0A \n"
+        },
+        {
+            "label": "2024-12-13_17-37-15",
+            "content": "@@ -1002,24 +1002,27 @@\n id %7B%0A       \n+ //\n  this.notebo\n@@ -1024,21 +1024,22 @@\n otebook.\n-ligar\n+turnOn\n ();%0A    \n"
+        },
+        {
+            "label": "2024-12-13_17-37-42",
+            "content": "@@ -761,35 +761,25 @@\n og(%22\n-fail:%C2%B7n%C3%A3o%C2%B7foi%C2%B7poss%C3%ADvel%C2%B7liga\n+n%C3%A3o tem carregado\n r%22);\n"
+        },
+        {
+            "label": "2024-12-13_17-38-49",
+            "content": "@@ -766,24 +766,25 @@\n ail:\n+%C2%B7\n n%C3%A3o\n- foi \n+%C2%B7foi%C2%B7\n poss%C3%ADvel\n  lig\n@@ -779,17 +779,17 @@\n poss%C3%ADvel\n- \n+%C2%B7\n ligar%22);\n"
+        },
+        {
+            "label": "2024-12-13_17-39-31",
+            "content": "@@ -762,17 +762,16 @@\n g(%22fail:\n- \n n%C3%A3o foi \n"
+        },
+        {
+            "label": "2024-12-13_17-39-40",
+            "content": "@@ -366,18 +366,16 @@\n ort %7B%7D;%0A\n-%0A%0A\n class No\n@@ -809,132 +809,8 @@\n   %7D%0A\n-    usar(tempoUso: number): void%7B%0A        if(!this.ligado)%7B%0A            console.log(%22fail n%C3%A3o esta ligado%22)%0A        %7D%0A    %7D%0A\n %7D%0Acl\n"
+        },
+        {
+            "label": "2024-12-13_17-43-04",
+            "content": "@@ -1921,32 +1921,35 @@\n : void %7B%0A       \n+ //\n  this.notebook.u\n"
+        },
+        {
+            "label": "2024-12-13_17-43-34",
+            "content": "@@ -1946,18 +1946,17 @@\n ebook.us\n-ar\n+e\n (minutes\n"
+        },
+        {
+            "label": "2024-12-13_17-43-54",
+            "content": "@@ -900,35 +900,26 @@\n fail\n-:\n  n%C3%A3o \n-foi poss%C3%ADvel\n+esta\n  liga\n-r\n+do\n %22)\n-;\n %0A   \n"
+        },
+        {
+            "label": "2024-12-13_17-44-56",
+            "content": "@@ -898,25 +898,38 @@\n (%22fail: \n-des\n+n%C3%A3o foi poss%C3%ADvel \n liga\n-do\n+r\n %22);%0A    \n"
+        },
+        {
+            "label": "2024-12-13_17-45-32",
+            "content": "@@ -972,162 +972,8 @@\n ber%0A\n-    constructor(potencia: number) %7B%0A        this.potencia = potencia;%0A    %7D%0A    toString(): string %7B%0A        return %60Carregador $%7Bthis.potencia%7Dw%60;%0A    %7D%0A\n %7D%0A%0A%0A\n"
+        },
+        {
+            "label": "2024-12-13_17-51-33",
+            "content": "@@ -558,19 +558,26 @@\n     if(t\n-rue\n+his.ligado\n )%7B%0A     \n@@ -595,36 +595,8 @@\n rn %60\n-$%7Bthis.carregador?.toString%7D\n liga\n"
+        },
+        {
+            "label": "2024-12-13_17-53-30",
+            "content": "@@ -952,105 +952,8 @@\n   %7D%0A\n-    setCarregador(potencia: number): void %7B%0A        this.carregador?.setPotencia(potencia)%0A    %7D%0A\n %7D%0Acl\n@@ -1141,50 +1141,8 @@\n w%60;%0A\n-    %7D%0A    setPotencia(potencia: number)%7B%0A%0A\n     \n@@ -1459,42 +1459,27 @@\n     \n-this.notebook.setCarregador(power)\n+//TODO: Implementar\n %0A   \n"
+        },
+        {
+            "label": "2024-12-13_17-57-06",
+            "content": "@@ -996,60 +996,8 @@\n d %7B%0A\n-        this.carregador = new Carregador(potencia);%0A\n     \n"
+        },
+        {
+            "label": "2024-12-13_17-58-37",
+            "content": "@@ -611,18 +611,16 @@\n toString\n-()\n %7Dligado%60\n"
+        },
+        {
+            "label": "2024-12-13_17-59-05",
+            "content": "@@ -536,33 +536,32 @@\n String(): string\n- \n %7B%0A        if(thi\n@@ -558,26 +558,19 @@\n     if(t\n-his.ligado\n+rue\n )%7B%0A     \n@@ -584,16 +584,46 @@\n return %60\n+$%7Bthis.carregador?.toString()%7D\n ligado%60;\n@@ -641,32 +641,20 @@\n         \n-if(!this.ligado)\n+else\n %7B%0A      \n"
+        },
+        {
+            "label": "2024-12-13_18-03-15",
+            "content": "@@ -525,33 +525,8 @@\n     \n-saida_string: string = %22%22\n %0A   \n@@ -588,48 +588,23 @@\n     \n-this.saida_string += %22Notebook:  \n+return %60\n ligado\n-%22\n+%60\n ;%0A  \n@@ -653,29 +653,14 @@\n     \n-this.saida_string += \n+return\n  %60No\n@@ -693,41 +693,8 @@\n   %7D%0A\n-        return this.saida_string%0A\n     \n"
+        },
+        {
+            "label": "2024-12-13_18-13-04",
+            "content": "@@ -758,114 +758,8 @@\n   %7D%0A\n-        if(this.carregador)%7B%0A            this.saida_string += %60, $%7Bthis.carregador.toString()%7D%60%0A        %7D%0A\n     \n"
+        },
+        {
+            "label": "2024-12-13_18-16-48",
+            "content": "@@ -1482,9 +1482,9 @@\n cia%7D\n-W\n+w\n %60;%0A \n"
+        },
+        {
+            "label": "2024-12-13_18-17-08",
+            "content": "@@ -515,34 +515,8 @@\n se;%0A\n-        this.tempoUso = 0%0A\n     \n@@ -630,17 +630,17 @@\n ring += \n-%60\n+%22\n Notebook\n@@ -652,30 +652,9 @@\n gado\n- por $%7Bthis.tempoUso%7D%60\n+%22\n ;%0A  \n"
+        },
+        {
+            "label": "2024-12-13_18-21-17",
+            "content": "@@ -1069,63 +1069,8 @@\n   %7D%0A\n-        else%7B%0A            this.ligado = true%0A        %7D%0A\n     \n"
+        },
+        {
+            "label": "2024-12-13_18-22-26",
+            "content": "@@ -563,24 +563,29 @@\n ring: string\n+ = %22%22\n %0A    toStrin\n@@ -602,39 +602,8 @@\n g %7B%0A\n-        this.saida_string = %22%22%0A\n     \n"
+        },
+        {
+            "label": "2024-12-13_18-24-31",
+            "content": "@@ -725,12 +725,8 @@\n Uso%7D\n- min\n %60;%0A \n"
+        },
+        {
+            "label": "2024-12-13_18-25-31",
+            "content": "@@ -692,16 +692,17 @@\n otebook:\n+ \n  ligado \n"
+        },
+        {
+            "label": "2024-12-13_18-25-43",
+            "content": "@@ -1273,72 +1273,8 @@\n   %7D%0A\n-        else %7B%0A            this.tempoUso += tempoUso;%0A        %7D%0A\n     \n"
+        },
+        {
+            "label": "2024-12-13_18-26-25",
+            "content": "function input(): string { let X: any = input; X.L = X.L || require(\"fs\").readFileSync(0).toString().split(/\\r?\\n/); return X.L.shift(); } // _TEST_ONLY_\n//function input(): string { let X: any = input; X.P = X.P || require(\"readline-sync\"); return X.P.question() } // _FREE_ONLY_\nfunction write(text: any, endl=\"\\n\") { process.stdout.write(\"\" + text + endl); }\nexport {};\n\n\nclass Notebook {\n    ligado: boolean;\n    tempoUso: number;\n    carregador: Carregador | null;\n    constructor(){\n        this.ligado = false;\n        this.tempoUso = 0\n    }\n    saida_string: string\n    toString(): string {\n        this.saida_string = \"\"\n        if(this.ligado){\n            this.saida_string += `Notebook: ligado por ${this.tempoUso} min`;\n        }\n        if(!this.ligado){\n            this.saida_string +=  `Notebook: desligado`;\n        }\n        if(this.carregador){\n            this.saida_string += `, ${this.carregador.toString()}`\n        }\n        return this.saida_string\n    }\n\n    ligar() {\n        if(this.carregador == null){\n            console.log(\"fail: n\u00e3o foi poss\u00edvel ligar\");\n        }\n        else{\n            this.ligado = true\n        }\n    }\n    usar(tempoUso: number): void{\n        if(!this.ligado){\n            console.log(\"fail: desligado\");\n        }\n        else {\n            this.tempoUso += tempoUso;\n        }\n    }\n    setCarregador(potencia: number): void {\n        this.carregador = new Carregador(potencia);\n        this.carregador?.setPotencia(potencia)\n    }\n}\nclass Carregador{\n    potencia: number\n    constructor(potencia: number) {\n        this.potencia = potencia;\n    }\n    toString(): string {\n        return `Carregador ${this.potencia}W`;\n    }\n    setPotencia(potencia: number){\n\n    }\n}\n\n\nclass Adapter {\n    private notebook: Notebook = new Notebook();\n    show(): void {\n        console.log(this.notebook.toString());\n    }\n\n    turnOn(): void {\n        this.notebook.ligar();\n    }\n\n    turnOff(): void {\n        // this.notebook.turnOff();\n    }\n\n    setCharger(power: number): void {\n        this.notebook.setCarregador(power)\n    }\n\n    removeCharger(): void {\n        // let charger = this.notebook.removeCharger();\n        // if (charger) {\n        //     console.log(`Removido ${charger}`);\n        // } else {\n        //     console.log(\"fail: Sem carregador\");\n        // }\n    }\n\n    setBattery(capacity: number): void {\n        //TODO Implementar\n    }\n\n    removeBattery(): void {\n        // let battery = this.notebook.removeBattery();\n        // if (battery) {\n        //     console.log(`Removido ${battery}`);\n        // } else {\n        //     console.log(\"fail: Sem bateria\");\n        // }\n    }\n\n    use(minutes: number): void {\n        this.notebook.usar(minutes);\n    }\n}\n\n// Fun\u00e7\u00e3o principal\nfunction main() {\n    const adapter = new Adapter();\n    while (true) {\n        let line = input();\n        let args = line.split(\" \");\n        write(\"$\" + line);\n\n        if      (args[0] === \"end\"        ) { break;                           }\n        else if (args[0] === \"show\"       ) { adapter.show();                  }\n        else if (args[0] === \"turn_on\"    ) { adapter.turnOn();                }\n        else if (args[0] === \"turn_off\"   ) { adapter.turnOff();               }\n        else if (args[0] === \"use\"        ) { adapter.use(+args[1]);           }\n        else if (args[0] === \"set_charger\") { adapter.setCharger(+args[1]);    }\n        else if (args[0] === \"rm_charger\" ) { adapter.removeCharger();         }\n        else if (args[0] === \"set_battery\") { adapter.setBattery(+args[1]);    }\n        else if (args[0] === \"rm_battery\" ) { adapter.removeBattery();         }\n        else                                { write(\"fail: comando inv\u00e1lido\"); }\n\n    }\n}\n\nmain();\n"
+        }
+    ]
+}
